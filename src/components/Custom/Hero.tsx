@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -11,7 +12,7 @@ const Hero = () => {
         numSquares={30}
         maxOpacity={0.08}
         duration={3}
-        repeatDelay={1}
+        repeatdelay={1}
         className={cn(
           "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
           "inset-x-0 h-full skew-y-12"
@@ -42,9 +43,14 @@ const Hero = () => {
         </p>
 
         <div className="mt-12 flex items-center justify-center gap-4">
-          <Button size="lg" className="rounded-full text-base px-6 py-3">
-            Get Started <ArrowUpRight className="!h-5 !w-5" />
-          </Button>
+          <Link href={"/Kanban"}>
+            <Button
+              size="lg"
+              className="rounded-full text-base px-6 py-3 cursor-pointer"
+            >
+              Get Started <ArrowUpRight className="!h-5 !w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

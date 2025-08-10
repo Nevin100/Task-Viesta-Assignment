@@ -16,7 +16,7 @@ interface AnimatedGridPatternProps {
   className?: string;
   maxOpacity?: number;
   duration?: number;
-  repeatDelay?: number;
+  repeatdelay?: number;
 }
 
 export default function AnimatedGridPattern({

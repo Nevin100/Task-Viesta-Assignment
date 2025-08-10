@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
@@ -20,13 +19,6 @@ const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-5 p-2">
-            <Button
-              variant="outline"
-              className="hidden sm:inline-flex rounded-full"
-            >
-              Sign In
-            </Button>
-
             <div>
               <ModeToggle />
             </div>
