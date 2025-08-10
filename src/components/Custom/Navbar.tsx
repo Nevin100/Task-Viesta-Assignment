@@ -9,7 +9,7 @@ const Navbar = () => {
     <header className="bg-muted">
       <nav
         aria-label="Main Navigation"
-        className="fixed top-6 inset-x-4 h-20 bg-background border dark:border-slate-700/70 max-w-screen-xl mx-auto rounded-full shadow-sm"
+        className="fixed top-6 inset-x-4 h-20 backdrop-blur-sm bg-background border dark:border-slate-700/70 max-w-screen-xl mx-auto rounded-full shadow-sm"
       >
         <div className="h-full flex items-center justify-between px-4">
           {/* Logo */}
@@ -26,7 +26,6 @@ const Navbar = () => {
             >
               Sign In
             </Button>
-            <Button className="rounded-full">Get Started</Button>
 
             <div>
               <ModeToggle />
