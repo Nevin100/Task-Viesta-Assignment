@@ -19,7 +19,7 @@ const Navbar = () => {
           <NavMenu className="hidden md:block" />
 
           {/* Actions */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 p-2">
             <Button
               variant="outline"
               className="hidden sm:inline-flex rounded-full"
