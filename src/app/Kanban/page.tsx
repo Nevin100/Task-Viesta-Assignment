@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useRef } from "react";
 import { DndProvider, useDrag, useDrop, DropTargetMonitor } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { useTheme } from "next-themes";
@@ -75,24 +75,37 @@ const TaskCard: React.FC<{
 
   const [, drop] = useDrop({
     accept: "TASK",
-    hover(item: DragItem, monitor: DropTargetMonitor) {
+    hover(item, monitor) {
+      const dragItem = item as DragItem; // <-- cast here
+
       if (
-        item.taskId === task.id &&
-        item.fromColumnId === columnId &&
-        item.index === index
+        dragItem.taskId === task.id &&
+        dragItem.fromColumnId === columnId &&
+        dragItem.index === index
       ) {
         return;
       }
-      if (item.fromColumnId === columnId) {
-        moveTask(columnId, columnId, item.index, index);
-        item.index = index;
+      if (dragItem.fromColumnId === columnId) {
+        moveTask(columnId, columnId, dragItem.index, index);
+        dragItem.index = index;
       }
     },
   });
 
+  const ref = useRef<HTMLDivElement>(null);
+
+  const dragDropRef = useCallback(
+    (node: HTMLDivElement | null) => {
+      drag(node);
+      drop(node);
+      ref.current = node;
+    },
+    [drag, drop]
+  );
+
   return (
     <div
-      ref={(node) => drag(drop(node))}
+      ref={dragDropRef}
       className={`bg-white dark:bg-[#121212] text-gray-900 dark:text-gray-100 p-4 mb-4 rounded-lg shadow-md cursor-grab select-none
         border border-gray-300 dark:border-gray-700
         transition-shadow duration-300
@@ -158,9 +171,12 @@ const ColumnComponent: React.FC<{
     },
   });
 
+  const dropRef = (node: HTMLDivElement | null) => {
+    drop(node);
+  };
   return (
     <div
-      ref={drop}
+      ref={dropRef}
       className="bg-white dark:bg-black rounded-xl p-6 shadow-lg min-h-[250px] flex flex-col
         border border-gray-300 dark:border-gray-700
         transition-colors duration-300 hover:border-blue-500 dark:hover:border-blue-400"
