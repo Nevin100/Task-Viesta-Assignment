@@ -113,10 +113,11 @@ const Features = () => {
                 </div>
               </li>
             </ul>
-
-            <Button className="mt-12 w-full">
-              Try It Now <ArrowRight />
-            </Button>
+            <Link href={"/Kanban"}>
+              <Button className="mt-12 w-full">
+                Try It Now <ArrowRight />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

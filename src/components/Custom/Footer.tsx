@@ -4,11 +4,11 @@ import Link from "next/link";
 const footerLinks = [
   {
     title: "Home",
-    href: "#",
+    href: "/",
   },
   {
     title: "About Developer",
-    href: "#",
+    href: "/About-Developer",
   },
 ];
 

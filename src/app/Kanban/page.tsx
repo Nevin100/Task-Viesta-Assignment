@@ -27,19 +27,21 @@ const initialData: Column[] = [
     id: "todo",
     title: "To Do",
     tasks: [
-      { id: "task-1", content: "Learn Next.js" },
-      { id: "task-2", content: "Set up Tailwind" },
+      { id: "task-1", content: "Backend Integration" },
+      { id: "task-2", content: "Authentication" },
     ],
   },
   {
     id: "in-progress",
     title: "In Progress",
-    tasks: [{ id: "task-3", content: "Build Kanban Board" }],
+    tasks: [
+      { id: "task-3", content: "Soon Integration with PostgreSQL or MongoDB" },
+    ],
   },
   {
     id: "completed",
     title: "Completed",
-    tasks: [{ id: "task-4", content: "Learn TypeScript" }],
+    tasks: [{ id: "task-4", content: "Assignment Requirement Completed" }],
   },
 ];
 

@@ -30,11 +30,11 @@ const Hero = () => {
 
         <p className="mt-6 text-[17px] md:text-lg text-muted-foreground leading-relaxed">
           Stay on top of every project with a beautiful, intuitive{" "}
-          <strong>Kanban board</strong> designed for speed and clarity. Create,
-          edit, and organize tasks seamlessly across <strong>Todo</strong>,{" "}
-          <strong>In Progress</strong>, and <strong>Done</strong> — all while
-          enjoying a distraction-free, responsive interface built with Shadcn
-          UI.
+          <strong> Task Viesta </strong> - A <strong>Kanban board</strong>{" "}
+          designed for speed and clarity. Create, edit, and organize tasks
+          seamlessly across <strong>Todo</strong>, <strong>In Progress</strong>,
+          and <strong>Done</strong> — all while enjoying a distraction-free,
+          responsive interface built with Shadcn UI.
         </p>
 
         <p className="mt-3 text-sm text-muted-foreground/80">
